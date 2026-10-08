@@ -11,7 +11,9 @@
   <meta property="og:url" content="https://yassirelmalaki.github.io/">
   <meta property="og:title" content="Yassir Elmalaki — Product Strategist &amp; Behavioral Designer">
   <meta property="og:description" content="Diseño productos que transforman la intención en acción, uniendo psicología conductual e inteligencia de datos.">
-  <meta property="og:image" content="https://yassirelmalaki.github.io/assets/img/repsol-1.png">
+  <meta property="og:image" content="https://yassirelmalaki.github.io/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230a0a0a'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='16' fill='%23fefefe' text-anchor='middle'%3EYE%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -426,13 +428,6 @@
         color: var(--black);
       }
       /* Image: natural size, not constrained height */
-      .slide-visual {
-        width: 100%;
-        align-items: flex-start;
-      }
-      .slide-visual img {
-        max-height: 55vh;
-      }
     }
     /* Tablet: smaller text panel */
     @media (min-width: 476px) and (max-width: 1200px) {
@@ -523,6 +518,30 @@
       transition: transform .6s cubic-bezier(.16,1,.3,1);
     }
     .slide-visual:hover img { transform: scale(1.02); }
+    /* Mobile: image fills the space left under the text, scaled down without cropping
+       (must come after the base rules above to win the cascade) */
+    @media (max-width: 475px) {
+      .slide-visual { width: 100%; align-self: stretch; }
+      .slide-visual img {
+        width: 100%; height: 100%;
+        max-height: none;
+        object-position: center top;
+      }
+      .slide-visual:hover img { transform: none; }
+    }
+    .slide-placeholder {
+      width: 100%;
+      aspect-ratio: 1330 / 856;
+      max-height: calc(100vh - 180px);
+      border-radius: 4px;
+      background: linear-gradient(135deg, #d4ecef 0%, #e8f1ee 50%, #f5ede0 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Syne', sans-serif;
+      font-size: 12px; font-weight: 600;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: rgba(0,0,0,.3);
+    }
+    @media (max-width: 475px) { .slide-placeholder { max-height: 100%; } }
 
     /* ── MORE PROJECTS ────────────────────────── */
     #more { padding: 80px var(--pad); border-top: 1px solid var(--line); }
@@ -629,14 +648,6 @@
     .side-media iframe {
       position: absolute; inset:0;
       width:100%; height:100%; border: none;
-    }
-    .side-media-placeholder {
-      position: absolute; inset:0;
-      display:flex; align-items:center; justify-content:center;
-      background: #e8e8e8;
-      font-family: 'Syne', sans-serif;
-      font-size: 13px; font-weight: 700;
-      letter-spacing: .12em; color: rgba(0,0,0,.25);
     }
 
     /* ── CONTACT ──────────────────────────────── */
@@ -879,7 +890,7 @@
               <p class="slide-desc">Transformación de App y Web en un ecosistema unificado, conectado y con intención</p>
               <div class="slide-arrow" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path d="M2 7h10M7 2l5 5-5 5" stroke-width="1.2"/></svg></div>
             </div>
-            <div class="slide-visual"><img src="assets/img/repsol-1.webp" width="1330" height="856" alt="Guía Repsol — ecosistema unificado de web y app" decoding="async"></div>
+            <div class="slide-visual"><img src="assets/img/repsol-1.gif" width="923" height="2000" alt="Guía Repsol — app, sección Mis Cromos" decoding="async"></div>
             <div class="slide-counter"><span class="current">1</span>/ 4</div>
           </div>
           <div class="project-slide">
@@ -1093,6 +1104,57 @@
       </div>
     </div>
 
+    <div class="proj-divider"></div>
+
+    <!-- PROJECT 5: Iberostar -->
+    <div class="project-section" id="ps5">
+      <div class="project-sticky">
+        <div class="project-track" id="t5">
+          <div class="project-slide">
+            <div class="slide-watermark" aria-hidden="true">Iberostar</div>
+            <div class="slide-text">
+              <p class="slide-tag">Iberostar</p>
+              <h3 class="slide-title">Una nueva APP para las vacaciones</h3>
+              <p class="slide-desc">Diseño de una nueva APP para acompañar a los clientes de Iberostar durante sus vacaciones</p>
+              <div class="slide-arrow" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path d="M2 7h10M7 2l5 5-5 5" stroke-width="1.2"/></svg></div>
+            </div>
+            <!-- TODO: sustituir por <img src="assets/img/iberostar-1.webp" width="1330" height="856" alt="…" loading="lazy" decoding="async"> -->
+            <div class="slide-visual"><div class="slide-placeholder" aria-hidden="true">Imagen próximamente</div></div>
+            <div class="slide-counter"><span class="current">1</span>/ 3</div>
+          </div>
+          <div class="project-slide">
+            <div class="slide-watermark" aria-hidden="true">Iberostar</div>
+            <div class="slide-text">
+              <p class="slide-tag">Iberostar</p>
+              <h3 class="slide-title">Acompañar antes, durante y después</h3>
+              <p class="slide-desc">[Texto pendiente] Qué problema resolvía la app y cómo se acompaña al huésped en cada momento de su estancia</p>
+              <p class="slide-detail">[Detalle pendiente] Funcionalidades clave o decisiones de diseño.</p>
+              <div class="slide-arrow" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path d="M2 7h10M7 2l5 5-5 5" stroke-width="1.2"/></svg></div>
+            </div>
+            <!-- TODO: sustituir por <img src="assets/img/iberostar-2.webp" width="1330" height="856" alt="…" loading="lazy" decoding="async"> -->
+            <div class="slide-visual"><div class="slide-placeholder" aria-hidden="true">Imagen próximamente</div></div>
+            <div class="slide-counter"><span class="current">2</span>/ 3</div>
+          </div>
+          <div class="project-slide">
+            <div class="slide-watermark" aria-hidden="true">Iberostar</div>
+            <div class="slide-text">
+              <p class="slide-tag">Iberostar</p>
+              <h3 class="slide-title">Mi aportación</h3>
+              <p class="slide-desc">[Texto pendiente] Resultado o impacto del proyecto</p>
+              <p class="slide-detail">[Detalle pendiente] Mi aportación fue…</p>
+              <div class="slide-arrow" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"><path d="M2 7h10M7 2l5 5-5 5" stroke-width="1.2"/></svg></div>
+            </div>
+            <!-- TODO: sustituir por <img src="assets/img/iberostar-3.webp" width="1330" height="856" alt="…" loading="lazy" decoding="async"> -->
+            <div class="slide-visual"><div class="slide-placeholder" aria-hidden="true">Imagen próximamente</div></div>
+            <div class="slide-counter"><span class="current">3</span>/ 3</div>
+          </div>
+        </div>
+        <div class="proj-progress" id="pp5">
+          <div class="pdot on"></div><div class="pdot"></div><div class="pdot"></div>
+        </div>
+      </div>
+    </div>
+
   </section>
 
   <!-- ═══ MORE PROJECTS ══════════════════════════ -->
@@ -1110,7 +1172,6 @@
       </div>
       <div class="more-row from-right" id="mr2">
         <div class="more-card"><p class="more-client">MOEVE</p><p class="more-desc">Plataforma B2B para la gestión de activos y gastos de flotas y particulares</p></div>
-        <div class="more-card"><p class="more-client">Iberostar</p><p class="more-desc">Diseño de una nueva APP para clientes durante sus vacaciones</p></div>
         <div class="more-card"><p class="more-client">Naturgy</p><p class="more-desc">Diseño de soluciones para agentes y clientes en el soporte de sus necesidades</p></div>
       </div>
     </div>
@@ -1130,18 +1191,6 @@
         </div>
         <div class="side-media">
           <iframe src="https://www.youtube-nocookie.com/embed/f1L75Y57GRE?start=1745" title="Yassir Elmalaki — Clase magistral" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-      </div>
-      <div class="side-card">
-        <div class="side-text">
-          <div class="side-text-inner">
-            <p class="side-index">02 — Colaboración</p>
-            <h3 class="side-title">KORE</h3>
-            <p class="side-desc">Colaboro en KORE de forma independiente</p>
-          </div>
-        </div>
-        <div class="side-media">
-          <div class="side-media-placeholder">ENLACE</div>
         </div>
       </div>
     </div>
@@ -1294,12 +1343,11 @@ updateActiveNav();
 window.addEventListener('scroll', updateActiveNav, {passive:true});
 
 // ── SCROLL-DRIVEN CAROUSELS — works on ALL screen sizes
-const projDefs = [
-  { s:document.getElementById('ps1'), t:document.getElementById('t1'), p:document.getElementById('pp1'), n:4 },
-  { s:document.getElementById('ps2'), t:document.getElementById('t2'), p:document.getElementById('pp2'), n:4 },
-  { s:document.getElementById('ps3'), t:document.getElementById('t3'), p:document.getElementById('pp3'), n:4 },
-  { s:document.getElementById('ps4'), t:document.getElementById('t4'), p:document.getElementById('pp4'), n:3 },
-];
+// Every .project-section is picked up automatically; slide count comes from the markup
+const projDefs = [...document.querySelectorAll('.project-section')].map(s=>({
+  s, t:s.querySelector('.project-track'), p:s.querySelector('.proj-progress'),
+  n:s.querySelectorAll('.project-slide').length,
+}));
 
 function setHeights(){
   const vh=window.innerHeight, vw=window.innerWidth;
